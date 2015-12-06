@@ -25,5 +25,6 @@ module.exports = function (rule) {
         page.$(rule).each(function() {
             spider.addUrl(page.$(this).attr('href'));
         });
+        next();
     }
 };
