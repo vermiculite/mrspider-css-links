@@ -4,7 +4,10 @@
   "description": "middleware for mrspider to extract links using css rules",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --recursive",
+    "test-watch": "mocha --recursive --watch",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha --check-leaks test/ --recursive",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
   },
   "repository": {
     "type": "git",
@@ -29,6 +32,7 @@
     "sinon": "^1.17.2"
   },
   "devDependencies": {
-    "cheerio": "^0.19.0"
+    "cheerio": "^0.19.0",
+    "istanbul": "^0.4.1"
   }
 }
