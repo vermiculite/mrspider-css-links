@@ -26,13 +26,13 @@ describe('mrspider-css-links', function() {
 
     it('should call addUrl of the spider given content with a link for the passed rule', function() {
         validPage.spider.addUrl = sinon.spy();
-        validCssLink._transform(validPage, validNext);
+        validCssLink._transform(validPage, 'utf8', validNext);
         validPage.spider.addUrl.calledOnce.should.equal(true);
     });
 
     it('should call addUrl of the spider given content with a link for the passed rule with the url of the href', function() {
         validPage.spider.addUrl = sinon.spy();
-        validCssLink._transform(validPage, validNext);
+        validCssLink._transform(validPage, 'utf8', validNext);
         validPage.spider.addUrl.calledOnce.should.equal(true);
         validSpider.addUrl.firstCall.args[0].should.equal('http://abc.com/test');
     });
@@ -40,7 +40,7 @@ describe('mrspider-css-links', function() {
     it('should call addUrl for each url matched givena rule that matches several links.', function() {
         var cssLink = cssLinks('h1 a');
         validPage.spider.addUrl = sinon.spy();
-        cssLink._transform(validPage, validNext);
+        cssLink._transform(validPage, 'utf8', validNext);
         validPage.spider.addUrl.calledWith('http://abc.com/test').should.equal(true);
         validPage.spider.addUrl.calledWith('http://abc.com/test/1').should.equal(true);
         validPage.spider.addUrl.calledWith('http://abc.com/test/2').should.equal(true);
