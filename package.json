@@ -1,6 +1,6 @@
 {
   "name": "mrspider-css-links",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "middleware for mrspider to extract links using css rules",
   "main": "index.js",
   "scripts": {
